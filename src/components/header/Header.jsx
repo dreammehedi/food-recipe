@@ -8,14 +8,32 @@ import Menu from "./Menu";
 
 function Header() {
   const [menu, setMenu] = useState(false);
+  const [scicky, setSticky] = useState(false);
 
+  // active menu
   const activeMenu = () => {
     setMenu(!menu);
   };
+
+  // scicky menu
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  });
+
   return (
-    <header>
+    <header
+      className={`${
+        scicky
+          ? "fixed bg-white shadow-lg shadow-primary/50 top-0 left-0 !py-8"
+          : "static "
+      } bg-white w-full py-12 transition-all duration-300 ease-linear`}
+    >
       {/* navbar */}
-      <nav className="container flex justify-between items-center py-10 ">
+      <nav className="container flex justify-between items-center  ">
         {/* logo */}
         <Logo></Logo>
 
@@ -26,7 +44,7 @@ function Header() {
         <Menu
           cls={`${
             menu ? "left-0" : "-left-full"
-          } flex flex-col lg:hidden w-1/2 bg-slate-200 fixed top-0 left-0 p-10 h-screen shadow-lg rounded-tr-xl transition-all duration-300 ease-linear rounded-br-xl z-[999999] shadow-primary gap-8`}
+          } flex flex-col lg:hidden w-1/2 bg-white fixed top-0 left-0 p-10 h-screen shadow-lg rounded-tr-xl transition-all duration-300 ease-linear rounded-br-xl z-[999999] shadow-primary gap-8`}
         ></Menu>
         {/* search bar */}
         <div className="flex justify-between items-center gap-4">

@@ -2,7 +2,7 @@ import banner from "../../assets/bg/banner.png";
 import Button from "../button/Button";
 function Banner() {
   return (
-    <section className="my-6 md:my-8 lg:my-10">
+    <section className="!mt-0 my-6 md:my-8 lg:my-10">
       <div
         style={{ backgroundImage: `url(${banner})` }}
         className="container bg-no-repeat bg-bottom bg-cover rounded-3xl overflow-hidden flex justify-center items-center h-[600px]"
