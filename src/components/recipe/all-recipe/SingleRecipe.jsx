@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaFireFlameCurved } from "react-icons/fa6";
 import { IoTimeOutline } from "react-icons/io5";
-function SingleRecipe({ recipe }) {
+function SingleRecipe({ recipe, handleCook }) {
   const {
     recipe_name,
     short_description,
@@ -52,7 +52,12 @@ function SingleRecipe({ recipe }) {
       </div>
 
       {/* button */}
-      <button className="transition-all duration-500 ease-linear  md:text-xl capitalize font-semibold rounded-full bg-primary text-dark text-[18px] px-6 py-3 flex mr-auto ring-1 ring-primary hover:bg-transparent ">
+      <button
+        onClick={() => {
+          handleCook(recipe);
+        }}
+        className="transition-all duration-500 ease-linear  md:text-xl capitalize font-semibold rounded-full bg-primary text-dark text-[18px] px-6 py-3 flex mr-auto ring-1 ring-primary hover:bg-transparent "
+      >
         Want to Cook
       </button>
     </div>
@@ -61,5 +66,6 @@ function SingleRecipe({ recipe }) {
 
 SingleRecipe.propTypes = {
   recipe: PropTypes.object,
+  handleCook: PropTypes.func,
 };
 export default SingleRecipe;
