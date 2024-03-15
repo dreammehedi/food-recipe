@@ -3,7 +3,6 @@ import SingleRecipe from "./SingleRecipe";
 
 function AllRecipe() {
   const [recipe, setRecipe] = useState([]);
-  console.log(recipe);
 
   // get recipes data
   useEffect(() => {

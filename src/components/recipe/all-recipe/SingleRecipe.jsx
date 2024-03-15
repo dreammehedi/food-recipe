@@ -3,7 +3,6 @@ import { FaFireFlameCurved } from "react-icons/fa6";
 import { IoTimeOutline } from "react-icons/io5";
 import Button from "../../button/Button";
 function SingleRecipe({ recipe }) {
-  console.log(recipe);
   const {
     recipe_name,
     short_description,
