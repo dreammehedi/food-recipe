@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import RacipeTable from "../RacipeTable";
 import RecipeInfoTitle from "../RecipeInfoTitle";
+import RacipeTable from "./RacipeTable";
 function WantCook({ selectRecipe, readyCooking }) {
   return (
     <>

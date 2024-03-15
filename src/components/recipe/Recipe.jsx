@@ -9,6 +9,9 @@ function Recipe() {
   // set recipe code data in state
   const [cookRecipe, setCookRecipe] = useState([]);
 
+  // final cooking state and update cooking table
+  const [cookingNow, setCookingNow] = useState([]);
+
   // handleCook function
   const handleCook = (cookData) => {
     // check cookData is already exist or not
@@ -27,6 +30,8 @@ function Recipe() {
 
   // ready cooking data
   const readyCooking = (checkCooking) => {
+    // update cooking now
+    setCookingNow([...cookingNow, checkCooking]);
     const updateRecipe = cookRecipe.filter(
       (selectedRecipe) => selectedRecipe.recipe_id !== checkCooking.recipe_id
     );
@@ -50,6 +55,7 @@ function Recipe() {
         <RecipeInfo
           selectRecipe={cookRecipe}
           readyCooking={readyCooking}
+          cookingNow={cookingNow}
         ></RecipeInfo>
       </div>
       <ToastContainer></ToastContainer>

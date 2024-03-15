@@ -1,19 +1,22 @@
+import PropTypes from "prop-types";
 import RecipeInfoTitle from "../RecipeInfoTitle";
 import CookingTable from "./CookingTable";
 
-function Cooking() {
+function Cooking({ cookingNow }) {
   return (
     <>
       {/* current cooking title */}
       <RecipeInfoTitle
         name={"Currently cooking: "}
-        length={0}
+        length={cookingNow.length}
       ></RecipeInfoTitle>
 
       {/* cooking table */}
-      <CookingTable></CookingTable>
+      <CookingTable cookingNow={cookingNow}></CookingTable>
     </>
   );
 }
-
+Cooking.propTypes = {
+  cookingNow: PropTypes.array,
+};
 export default Cooking;
