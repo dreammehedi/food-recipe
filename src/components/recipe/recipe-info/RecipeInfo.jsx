@@ -1,5 +1,5 @@
 function RecipeInfo() {
-  return <div>RecipeInfo</div>;
+  return <div className="col-span-5">RecipeInfo</div>;
 }
 
 export default RecipeInfo;
