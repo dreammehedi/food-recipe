@@ -3,6 +3,7 @@ import SectionTitle from "../section/SectionTitle";
 function Recipe() {
   return (
     <section className="my-6 md:my-8 lg:my-10">
+      {/* section title */}
       <SectionTitle
         title={"Our Recipes"}
         desc={
