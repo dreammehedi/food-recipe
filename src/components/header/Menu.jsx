@@ -7,7 +7,7 @@ const menuContent = [
 
 function Menu() {
   return (
-    <ul className="flex justify-center items-center gap-8">
+    <ul className="hidden lg:flex justify-center items-center gap-8">
       {menuContent.map((singleMenu, ind) => {
         const { menu, link } = singleMenu;
         return (
