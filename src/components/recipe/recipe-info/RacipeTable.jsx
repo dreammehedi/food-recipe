@@ -48,12 +48,3 @@ RacipeTable.propTypes = {
   readyCooking: PropTypes.func,
 };
 export default RacipeTable;
-{
-  /* <tfoot>
-  <tr className="text-dark-80 font-Lexend font-medium mt-4 grid grid-cols-3 justify-between">
-    <td></td>
-    <td>Total Time = 45 minutes</td>
-    <td>Total Calories = 1050 calories</td>
-  </tr>
-</tfoot>; */
-}
