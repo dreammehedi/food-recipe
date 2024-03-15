@@ -17,7 +17,7 @@ function AllRecipe({ handleCook }) {
   }, []);
 
   return (
-    <div className="col-span-7 grid grid-cols-2 justify-between gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-between gap-6">
       {/* recipe data container */}
       {recipe.map((recipe, ind) => {
         return (

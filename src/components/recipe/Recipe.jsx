@@ -36,7 +36,7 @@ function Recipe() {
       ></SectionTitle>
 
       {/* recipe full container */}
-      <div className="container my-8 grid grid-cols-12 justify-between gap-6">
+      <div className="container my-8 grid grid-cols-1 lg:grid-cols-2 justify-between gap-6">
         <AllRecipe handleCook={handleCook}></AllRecipe>
         <RecipeInfo selectRecipe={cookRecipe}></RecipeInfo>
       </div>

@@ -15,7 +15,7 @@ function SingleRecipe({ recipe, handleCook }) {
       {/* recipe img */}
       <figure>
         <img
-          className="object-cover rounded-2xl w-auto h-[200px]"
+          className="object-cover rounded-2xl w-full h-[300px] md:h-[350px] lg:h-[200px]"
           src={recipe_image}
           alt={recipe_name}
         />
@@ -58,7 +58,7 @@ function SingleRecipe({ recipe, handleCook }) {
         onClick={() => {
           handleCook(recipe);
         }}
-        className="transition-all duration-500 ease-linear  md:text-xl capitalize font-semibold rounded-full bg-primary text-dark text-[18px] px-6 py-3 flex mr-auto ring-1 ring-primary hover:bg-transparent "
+        className="transition-all duration-500 ease-linear text-[18px] lg:text-base capitalize font-semibold rounded-full bg-primary text-dark  px-6 py-3 flex mr-auto ring-1 ring-primary hover:bg-transparent "
       >
         Want to Cook
       </button>

@@ -4,7 +4,7 @@ import RecipeInfoTitle from "./RecipeInfoTitle";
 
 function RecipeInfo({ selectRecipe }) {
   return (
-    <div className="col-span-5 py-6 border border-[#28282833] rounded-2xl bg-white flex flex-col space-y-4 h-fit">
+    <div className="py-6 border border-[#28282833] rounded-2xl bg-white flex flex-col space-y-4 h-fit">
       {/* want to cook title */}
       <RecipeInfoTitle
         name={"Want to cook: "}
