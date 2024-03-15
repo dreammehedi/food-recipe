@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-function RacipeTable({ selectRecipe }) {
+function RacipeTable({ selectRecipe, readyCooking }) {
   return (
     <table className="w-full font-fira-sans text-left">
       <thead>
@@ -26,7 +26,12 @@ function RacipeTable({ selectRecipe }) {
               <td className="col-span-1">{preparing_time}</td>
               <td className="col-span-2">{calories}</td>
               <td className="col-span-2">
-                <button className="text-sm md:text-base transition-colors duration-300 ease-linear rounded-full font-Lexend font-medium text-dark bg-primary py-2 px-3 ring-1 ring-primary hover:ring-primary hover:bg-transparent">
+                <button
+                  onClick={() => {
+                    readyCooking(recipe);
+                  }}
+                  className="text-sm md:text-base transition-colors duration-300 ease-linear rounded-full font-Lexend font-medium text-dark bg-primary py-2 px-3 ring-1 ring-primary hover:ring-primary hover:bg-transparent"
+                >
                   Preparing
                 </button>
               </td>
@@ -40,6 +45,7 @@ function RacipeTable({ selectRecipe }) {
 
 RacipeTable.propTypes = {
   selectRecipe: PropTypes.array,
+  readyCooking: PropTypes.func,
 };
 export default RacipeTable;
 {

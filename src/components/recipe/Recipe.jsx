@@ -25,6 +25,15 @@ function Recipe() {
     }
   };
 
+  // ready cooking data
+  const readyCooking = (checkCooking) => {
+    const updateRecipe = cookRecipe.filter(
+      (selectedRecipe) => selectedRecipe.recipe_id !== checkCooking.recipe_id
+    );
+    setCookRecipe(updateRecipe);
+    console.log(updateRecipe);
+  };
+
   return (
     <section className="my-6 md:my-8 lg:my-10">
       {/* section title */}
@@ -38,7 +47,10 @@ function Recipe() {
       {/* recipe full container */}
       <div className="container my-8 grid grid-cols-1 lg:grid-cols-2 justify-between gap-6">
         <AllRecipe handleCook={handleCook}></AllRecipe>
-        <RecipeInfo selectRecipe={cookRecipe}></RecipeInfo>
+        <RecipeInfo
+          selectRecipe={cookRecipe}
+          readyCooking={readyCooking}
+        ></RecipeInfo>
       </div>
       <ToastContainer></ToastContainer>
     </section>
