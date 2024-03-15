@@ -5,7 +5,7 @@ function Banner() {
     <section className="my-6 md:my-8 lg:my-10">
       <div
         style={{ backgroundImage: `url(${banner})` }}
-        className="container bg-no-repeat bg-left-bottom bg-cover rounded-3xl overflow-hidden flex justify-center items-center h-[600px]"
+        className="container bg-no-repeat bg-bottom bg-cover rounded-3xl overflow-hidden flex justify-center items-center h-[600px]"
       >
         <div className="w-full md:max-w-4xl space-y-6 md:space-y-8 lg:space-y-10 flex flex-col justify-center items-center text-center">
           <h1 className="text-white font-bold leading-normal md:!leading-[76px] text-3xl md:text-4xl lg:text-5xl">
