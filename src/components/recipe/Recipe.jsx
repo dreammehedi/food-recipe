@@ -8,7 +8,7 @@ import RecipeInfo from "./recipe-info/RecipeInfo";
 function Recipe() {
   // set recipe code data in state
   const [cookRecipe, setCookRecipe] = useState([]);
-  console.log(cookRecipe);
+
   // handleCook function
   const handleCook = (cookData) => {
     // check cookData is already exist or not
@@ -38,7 +38,7 @@ function Recipe() {
       {/* recipe full container */}
       <div className="container my-8 grid grid-cols-12 justify-between gap-6">
         <AllRecipe handleCook={handleCook}></AllRecipe>
-        <RecipeInfo></RecipeInfo>
+        <RecipeInfo selectRecipe={cookRecipe}></RecipeInfo>
       </div>
       <ToastContainer></ToastContainer>
     </section>

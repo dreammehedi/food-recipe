@@ -1,45 +1,49 @@
 import PropTypes from "prop-types";
 import Button from "../../button/Button";
-function RacipeTable({ length, name, price, calories }) {
+function RacipeTable({ selectRecipe }) {
   return (
     <table className="w-full font-fira-sans text-left">
       <thead>
         <tr
-          className={`*:text-dark-06 p-4 *:font-medium grid grid-cols-4 justify-between`}
+          className={`*:text-dark-06 p-4 *:font-medium grid grid-cols-8 justify-between`}
         >
-          <th className="ml-6">Name</th>
-          <th>Price</th>
-          <th>Calories</th>
-          <th></th>
+          <th className="col-span-3 ml-6">Name</th>
+          <th className="col-span-1">Time</th>
+          <th className="col-span-4">Calories</th>
         </tr>
       </thead>
       <tbody className="bg-[#28282808]">
-        <tr className={`grid grid-cols-4 justify-between *:text-dark-70  p-4`}>
-          <td className="flex gap-4">
-            <span>{length}</span>
-            {name}
-          </td>
-          <td>{price}</td>
-          <td>{calories}</td>
-          <td>
-            <Button
-              cls={
-                "!text-base !text-dark bg-primary py-2 px-5 ring-1 ring-primary hover:ring-primary hover:bg-transparent"
-              }
-              name={"Preparing"}
-            ></Button>
-          </td>
-        </tr>
+        {selectRecipe.map((recipe, ind) => {
+          const { recipe_name, preparing_time, calories } = recipe;
+          return (
+            <tr
+              key={ind}
+              className={`grid grid-cols-8 justify-between gap-4 *:break-words *:text-dark-70  p-4`}
+            >
+              <td className="col-span-3 flex gap-4">
+                <span>{ind + 1}</span>
+                {recipe_name}
+              </td>
+              <td className="col-span-1">{preparing_time}</td>
+              <td className="col-span-2">{calories}</td>
+              <td className="col-span-2">
+                <Button
+                  cls={
+                    "!text-base !text-dark bg-primary py-2 px-5 ring-1 ring-primary hover:ring-primary hover:bg-transparent"
+                  }
+                  name={"Preparing"}
+                ></Button>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
 }
 
 RacipeTable.propTypes = {
-  length: PropTypes.number,
-  name: PropTypes.string,
-  price: PropTypes.string,
-  calories: PropTypes.string,
+  selectRecipe: PropTypes.array,
 };
 export default RacipeTable;
 {
