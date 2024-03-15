@@ -19,9 +19,15 @@ function Header() {
         {/* logo */}
         <Logo></Logo>
 
-        {/* menu */}
-        <Menu></Menu>
+        {/* desktop menu */}
+        <Menu cls={"hidden lg:flex justify-center items-center gap-8"}></Menu>
 
+        {/* mobile menu */}
+        <Menu
+          cls={`${
+            menu ? "left-0" : "-left-full"
+          } flex flex-col lg:hidden w-1/2 bg-slate-200 fixed top-0 left-0 p-10 h-screen shadow-lg rounded-tr-xl transition-all duration-300 ease-linear rounded-br-xl z-[999999] shadow-primary gap-8`}
+        ></Menu>
         {/* search bar */}
         <div className="flex justify-between items-center gap-4">
           {/* search form */}
@@ -44,7 +50,9 @@ function Header() {
             onClick={() => {
               activeMenu();
             }}
-            className="lg:hidden  bg-primary p-3 rounded-full flex justify-center items-center text-center transition-all duration-300 ease-linear hover:bg-primary/50 cursor-pointer"
+            className={`${
+              menu ? "bg-primary/50" : "bg-primary"
+            } lg:hidden  p-3 rounded-full flex justify-center items-center text-center transition-all duration-300 ease-linear hover:bg-primary/50 cursor-pointer`}
           >
             {menu ? (
               <IoMdClose
