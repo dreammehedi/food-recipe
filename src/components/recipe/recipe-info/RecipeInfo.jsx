@@ -6,7 +6,10 @@ function RecipeInfo({ selectRecipe }) {
   return (
     <div className="col-span-5 py-6 border border-[#28282833] rounded-2xl bg-white flex flex-col space-y-4 h-fit">
       {/* want to cook title */}
-      <RecipeInfoTitle name={"Want to cook: "} length={1}></RecipeInfoTitle>
+      <RecipeInfoTitle
+        name={"Want to cook: "}
+        length={selectRecipe.length}
+      ></RecipeInfoTitle>
       {/* want to cook table */}
       <div>
         <RacipeTable selectRecipe={selectRecipe}></RacipeTable>

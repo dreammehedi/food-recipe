@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Button from "../../button/Button";
 function RacipeTable({ selectRecipe }) {
   return (
     <table className="w-full font-fira-sans text-left">
@@ -27,12 +26,9 @@ function RacipeTable({ selectRecipe }) {
               <td className="col-span-1">{preparing_time}</td>
               <td className="col-span-2">{calories}</td>
               <td className="col-span-2">
-                <Button
-                  cls={
-                    "!text-base !text-dark bg-primary py-2 px-5 ring-1 ring-primary hover:ring-primary hover:bg-transparent"
-                  }
-                  name={"Preparing"}
-                ></Button>
+                <button className="text-base transition-colors duration-300 ease-linear rounded-full font-Lexend font-medium text-dark bg-primary py-2 px-3 ring-1 ring-primary hover:ring-primary hover:bg-transparent">
+                  Preparing
+                </button>
               </td>
             </tr>
           );
