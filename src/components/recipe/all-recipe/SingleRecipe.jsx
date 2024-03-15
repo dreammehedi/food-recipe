@@ -29,7 +29,9 @@ function SingleRecipe({ recipe, handleCook }) {
 
       {/* Ingredients */}
       <div className="flex flex-col space-y-4 border-t border-b border-[#28282833] py-6">
-        <h3 className="text-[18px] text-dark2 font-medium">Ingredients: 6</h3>
+        <h3 className="text-[18px] text-dark2 font-medium">
+          Ingredients: {ingredients.length}
+        </h3>
         <ul className="flex flex-col space-y-1 list-disc list-inside">
           {ingredients.map((ingredient, ind) => {
             return (
