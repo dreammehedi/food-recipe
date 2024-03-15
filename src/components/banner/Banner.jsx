@@ -9,12 +9,14 @@ function Banner() {
       >
         <div className="w-full md:max-w-4xl space-y-6 md:space-y-8 lg:space-y-10 flex flex-col justify-center items-center text-center">
           <h1 className="text-white font-bold leading-normal md:!leading-[76px] text-3xl md:text-4xl lg:text-5xl">
-            Discover an exceptional cooking class tailored for you!
+            Savor the Flavors: A Journey Through Exquisite Recipes
           </h1>
           <p className="text-white">
-            Learn and Master Basic Programming, Data Structures, Algorithm, OOP,
-            Database and solve 500+ coding problems to become an exceptionally
-            well world-class Programmer.
+            From the sun-kissed shores of Italy to the bustling markets of
+            India, these recipes offer a passport to culinary bliss, inviting
+            you to savor the flavors of the world. Whether you are a seasoned
+            chef or an aspiring home cook, there is something for everyone to
+            enjoy in this collection of exquisite recipes.
           </p>
 
           {/* button */}
