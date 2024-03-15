@@ -1,12 +1,9 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import SingleRecipe from "./SingleRecipe";
-
-function AllRecipe() {
+function AllRecipe({ handleCook }) {
   // set recipes data in state
   const [recipe, setRecipe] = useState([]);
-
-  // set recipe code data in state
-  const [cookRecipe, setCookRecipe] = useState([]);
 
   // get recipes data
   useEffect(() => {
@@ -18,20 +15,6 @@ function AllRecipe() {
     };
     getData();
   }, []);
-
-  // handleCook function
-  const handleCook = (cookData) => {
-    // check cookData is already exist or not
-    const checkCookData = cookRecipe.find(
-      (data) => data.recipe_id == cookData.recipe_id
-    );
-    // after cookData check data set
-    if (!checkCookData) {
-      setCookRecipe([...cookRecipe, cookData]);
-    } else {
-      console.log("I am already added");
-    }
-  };
 
   return (
     <div className="col-span-7 grid grid-cols-2 justify-between gap-6">
@@ -48,5 +31,7 @@ function AllRecipe() {
     </div>
   );
 }
-
+AllRecipe.propTypes = {
+  handleCook: PropTypes.func,
+};
 export default AllRecipe;

@@ -1,8 +1,30 @@
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import SectionTitle from "../section/SectionTitle";
 import AllRecipe from "./all-recipe/AllRecipe";
 import RecipeInfo from "./recipe-info/RecipeInfo";
 
 function Recipe() {
+  // set recipe code data in state
+  const [cookRecipe, setCookRecipe] = useState([]);
+  console.log(cookRecipe);
+  // handleCook function
+  const handleCook = (cookData) => {
+    // check cookData is already exist or not
+    const checkCookData = cookRecipe.find(
+      (data) => data.recipe_id == cookData.recipe_id
+    );
+
+    // after cookData check data set
+    if (!checkCookData) {
+      setCookRecipe([...cookRecipe, cookData]);
+      toast.success("Cook Added...");
+    } else {
+      toast.warn("Cook Already Added...");
+    }
+  };
+
   return (
     <section className="my-6 md:my-8 lg:my-10">
       {/* section title */}
@@ -15,9 +37,10 @@ function Recipe() {
 
       {/* recipe full container */}
       <div className="container my-8 grid grid-cols-12 justify-between gap-6">
-        <AllRecipe></AllRecipe>
+        <AllRecipe handleCook={handleCook}></AllRecipe>
         <RecipeInfo></RecipeInfo>
       </div>
+      <ToastContainer></ToastContainer>
     </section>
   );
 }
