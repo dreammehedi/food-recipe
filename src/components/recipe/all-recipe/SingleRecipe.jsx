@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { FaFireFlameCurved } from "react-icons/fa6";
 import { IoTimeOutline } from "react-icons/io5";
-import Button from "../../button/Button";
 function SingleRecipe({ recipe }) {
   const {
     recipe_name,
@@ -53,12 +52,9 @@ function SingleRecipe({ recipe }) {
       </div>
 
       {/* button */}
-      <Button
-        cls={
-          "bg-primary text-dark !text-[18px] !px-6 !py-3 flex mr-auto ring-1 ring-primary hover:bg-transparent "
-        }
-        name={"Want to Cook"}
-      ></Button>
+      <button className="transition-all duration-500 ease-linear  md:text-xl capitalize font-semibold rounded-full bg-primary text-dark text-[18px] px-6 py-3 flex mr-auto ring-1 ring-primary hover:bg-transparent ">
+        Want to Cook
+      </button>
     </div>
   );
 }
