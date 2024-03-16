@@ -11,7 +11,7 @@ function FooterBottom() {
     setHeart(!heart);
   };
   return (
-    <div className="container flex flex-col justify-center items-center text-center lg:flex-row lg:justify-evenly gap-4 py-4">
+    <div className="container flex flex-col justify-center items-center text-center lg:flex-row lg:justify-center gap-8 py-4">
       {/* copyright */}
       <p className="text-dark-70 flex justify-center flex-wrap text-wrap gap-1 items-center">
         &copy; Copyright {year} All Rights Reserved.
