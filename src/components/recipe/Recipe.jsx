@@ -10,11 +10,14 @@ function Recipe() {
   const getSelectRecipeLocalStorage =
     JSON.parse(localStorage.getItem("selectRecipe")) || [];
 
+  const getCookingNowLocalStorage =
+    JSON.parse(localStorage.getItem("cookingNow")) || [];
+
   // set recipe code data in state
   const [cookRecipe, setCookRecipe] = useState(getSelectRecipeLocalStorage);
 
   // final cooking state and update cooking table
-  const [cookingNow, setCookingNow] = useState([]);
+  const [cookingNow, setCookingNow] = useState(getCookingNowLocalStorage);
 
   // handleCook function
   const handleCook = (cookData) => {
@@ -42,10 +45,14 @@ function Recipe() {
     setCookRecipe(updateRecipe);
   };
 
-  // local storage cookRecipe data set
+  // local storage data set
   useEffect(() => {
+    // local storage cookRecipe data set
     localStorage.setItem("selectRecipe", JSON.stringify(cookRecipe));
-  }, [cookRecipe]);
+
+    // local storage cookingNow data set
+    localStorage.setItem("cookingNow", JSON.stringify(cookingNow));
+  }, [cookRecipe, cookingNow]);
 
   return (
     <section className="my-6 md:my-8 lg:my-10">
