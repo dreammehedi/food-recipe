@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoIosHeartHalf, IoMdHeart } from "react-icons/io";
+import Social from "./socialmenu/Social";
 
 function FooterBottom() {
   const date = new Date();
@@ -10,7 +11,8 @@ function FooterBottom() {
     setHeart(!heart);
   };
   return (
-    <div className="container flex flex-col justify-center items-center text-center lg:flex-row lg:justify-between gap-4 py-4">
+    <div className="container flex flex-col justify-center items-center text-center lg:flex-row lg:justify-evenly gap-4 py-4">
+      {/* copyright */}
       <p className="text-dark-70 flex justify-center flex-wrap text-wrap gap-1 items-center">
         &copy; Copyright {year} All Rights Reserved.
         <span
@@ -35,6 +37,7 @@ function FooterBottom() {
       </p>
 
       {/* social menu */}
+      <Social></Social>
     </div>
   );
 }
