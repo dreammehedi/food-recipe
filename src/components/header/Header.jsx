@@ -13,6 +13,7 @@ function Header() {
   // active menu
   const activeMenu = () => {
     setMenu(!menu);
+    console.log(!menu);
   };
 
   // scicky menu
@@ -28,9 +29,9 @@ function Header() {
     <header
       className={`${
         scicky
-          ? "fixed bg-white shadow-lg shadow-primary/50 top-0 left-0 !py-8"
+          ? "fixed bg-white shadow-lg shadow-primary/50 top-0 left-0 !py-6 md:!py-8"
           : "static "
-      } bg-white w-full py-12 transition-all duration-300 ease-linear`}
+      } bg-white w-full py-8 md:py-10 lg:py-12 transition-all duration-300 ease-linear`}
     >
       {/* navbar */}
       <nav className="container flex justify-between items-center  ">
@@ -44,7 +45,7 @@ function Header() {
         <Menu
           cls={`${
             menu ? "left-0" : "-left-full"
-          } flex flex-col lg:hidden w-1/2 bg-white fixed top-0 left-0 p-10 h-screen shadow-lg rounded-tr-xl transition-all duration-300 ease-linear rounded-br-xl z-[999999] shadow-primary gap-8`}
+          } flex flex-col lg:hidden w-1/2 bg-white fixed top-0 p-10 h-screen shadow-lg rounded-tr-xl transition-all duration-300 ease-linear rounded-br-xl z-[999999] shadow-primary gap-8`}
         ></Menu>
         {/* search bar */}
         <div className="flex justify-between items-center gap-4">
