@@ -29,7 +29,7 @@ function Header() {
     <header
       className={`${
         scicky
-          ? "fixed bg-white shadow-lg shadow-primary/50 top-0 left-0 !py-6 md:!py-8"
+          ? "fixed bg-white shadow-lg shadow-primary/50 top-0 left-0 !py-6 md:!py-8 z-[999999999]"
           : "static "
       } bg-white w-full py-8 md:py-10 lg:py-12 transition-all duration-300 ease-linear`}
     >

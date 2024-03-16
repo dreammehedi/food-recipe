@@ -13,9 +13,9 @@ function SingleRecipe({ recipe, handleCook }) {
   return (
     <div className="p-6 border border-[#28282833] rounded-2xl bg-white flex flex-col space-y-4">
       {/* recipe img */}
-      <figure>
+      <figure className="w-full h-[300px] md:h-[350px] lg:h-[200px] overflow-hidden rounded-2xl">
         <img
-          className="object-cover rounded-2xl w-full h-[300px] md:h-[350px] lg:h-[200px]"
+          className="cursor-pointer transition-all duration-300 ease-linear hover:-rotate-2 hover:scale-[1.02] object-cover rounded-2xl w-full h-[300px] md:h-[350px] lg:h-[200px]"
           src={recipe_image}
           alt={recipe_name}
         />
