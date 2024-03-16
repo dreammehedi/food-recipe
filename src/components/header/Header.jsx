@@ -2,7 +2,7 @@ import { FaRegUserCircle, FaSearch } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { LuMenu } from "react-icons/lu";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import Menu from "./Menu";
 
@@ -16,14 +16,20 @@ function Header() {
     console.log(!menu);
   };
 
-  // scicky menu
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      setSticky(true);
-    } else {
-      setSticky(false);
-    }
-  });
+  useEffect(() => {
+    const stickyNav = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 200) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+    window.addEventListener("scroll", stickyNav);
+    return () => {
+      window.removeEventListener("scroll", stickyNav);
+    };
+  }, []);
 
   return (
     <header

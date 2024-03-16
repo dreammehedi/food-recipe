@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 
 function ClickToTop() {
   const [isShow, setIsShow] = useState("hidden");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 350) {
-      setIsShow("block");
-    } else {
-      setIsShow("hidden");
-    }
-  });
+  useEffect(() => {
+    const scrollTop = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 450) {
+        setIsShow("block");
+      } else {
+        setIsShow("hidden");
+      }
+    };
+
+    window.addEventListener("scroll", scrollTop);
+    return () => {
+      window.removeEventListener("scroll", scrollTop);
+    };
+  }, []);
 
   // scrollTop function
   const scrollTop = () => {
