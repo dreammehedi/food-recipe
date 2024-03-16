@@ -1,4 +1,5 @@
 import Banner from "./components/banner/Banner";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Preloader from "./components/preloader/Preloader";
 import Recipe from "./components/recipe/Recipe";
@@ -11,6 +12,7 @@ function App() {
       <Header></Header>
       <Banner></Banner>
       <Recipe></Recipe>
+      <Footer></Footer>
       <ClickToTop></ClickToTop>
     </>
   );
