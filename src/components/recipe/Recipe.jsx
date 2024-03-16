@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SectionTitle from "../section/SectionTitle";
@@ -6,8 +6,12 @@ import AllRecipe from "./all-recipe/AllRecipe";
 import RecipeInfo from "./recipe-info/RecipeInfo";
 
 function Recipe() {
+  // local storage cookRecipe data get
+  const getSelectRecipeLocalStorage =
+    JSON.parse(localStorage.getItem("selectRecipe")) || [];
+
   // set recipe code data in state
-  const [cookRecipe, setCookRecipe] = useState([]);
+  const [cookRecipe, setCookRecipe] = useState(getSelectRecipeLocalStorage);
 
   // final cooking state and update cooking table
   const [cookingNow, setCookingNow] = useState([]);
@@ -36,8 +40,12 @@ function Recipe() {
       (selectedRecipe) => selectedRecipe.recipe_id !== checkCooking.recipe_id
     );
     setCookRecipe(updateRecipe);
-    console.log(updateRecipe);
   };
+
+  // local storage cookRecipe data set
+  useEffect(() => {
+    localStorage.setItem("selectRecipe", JSON.stringify(cookRecipe));
+  }, [cookRecipe]);
 
   return (
     <section className="my-6 md:my-8 lg:my-10">

@@ -13,7 +13,6 @@ function Header() {
   // active menu
   const activeMenu = () => {
     setMenu(!menu);
-    console.log(!menu);
   };
 
   useEffect(() => {
