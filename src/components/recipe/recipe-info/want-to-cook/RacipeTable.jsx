@@ -17,20 +17,20 @@ function RacipeTable({ selectRecipe, readyCooking }) {
           return (
             <tr
               key={ind}
-              className={`grid grid-cols-8 justify-between gap-4 *:break-words *:text-dark-70  p-4`}
+              className={`grid grid-cols-8 text-sm justify-between gap-2 md:gap-4 *:break-words *:text-dark-70 p-2 md:p-4`}
             >
-              <td className="col-span-3 flex gap-4">
+              <td className="col-span-3 flex gap-2 md:gap-4">
                 <span>{ind + 1}</span>
                 {recipe_name}
               </td>
               <td className="col-span-1">{preparing_time}</td>
               <td className="col-span-2">{calories}</td>
-              <td className="col-span-2">
+              <td className="col-span-2 mr-2">
                 <button
                   onClick={() => {
                     readyCooking(recipe);
                   }}
-                  className="text-sm md:text-base transition-colors duration-300 ease-linear rounded-full font-Lexend font-medium text-dark bg-primary py-2 px-3 ring-1 ring-primary hover:ring-primary hover:bg-transparent"
+                  className="text-[12px] md:text-base transition-colors duration-300 ease-linear rounded-full font-Lexend font-normal md:font-medium text-dark bg-primary py-1 md:py-2 px-2 md:px-3 ring-1 ring-primary hover:ring-primary hover:bg-transparent"
                 >
                   Preparing
                 </button>
