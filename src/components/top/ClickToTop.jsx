@@ -32,7 +32,7 @@ function ClickToTop() {
       onClick={() => {
         scrollTop();
       }}
-      className={`${isShow} fixed bottom-8 right-8  z-[88888] bg-white shadow shadow-primary cursor-pointer p-3 rounded-full`}
+      className={`${isShow} animate-bounce fixed bottom-8 right-8  z-[88888] bg-white shadow shadow-primary cursor-pointer p-3 rounded-full`}
     >
       <IoIosArrowUp className=" text-primary text-2xl "></IoIosArrowUp>
     </div>
