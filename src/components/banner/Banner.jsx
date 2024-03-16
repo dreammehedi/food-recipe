@@ -23,13 +23,13 @@ function Banner() {
           <div className="flex justify-center items-center gap-8">
             <Button
               cls={
-                "bg-primary text-dark hover:bg-transparent ring-1 ring-primary hover:text-white hover:ring-white"
+                "bg-primary !py-3 !px-6 md:!py-4 md:!px-7 lg:!py-5 lg:!px-8 text-dark hover:bg-transparent ring-1 ring-primary hover:text-white hover:ring-white"
               }
               name={"Explore Now"}
             ></Button>
             <Button
               cls={
-                "bg-transparent ring-1 ring-white text-white hover:bg-primary hover:ring-primary hover:text-dark"
+                "bg-transparent !py-3 !px-6 md:!py-4 md:!px-7 lg:!py-5 lg:!px-8 ring-1 ring-white text-white hover:bg-primary hover:ring-primary hover:text-dark"
               }
               name={"Our Feedback"}
             ></Button>
