@@ -73,7 +73,7 @@ function Recipe() {
           cookingNow={cookingNow}
         ></RecipeInfo>
       </div>
-      <ToastContainer></ToastContainer>
+      <ToastContainer position="bottom-right" autoClose={3000}></ToastContainer>
     </section>
   );
 }
